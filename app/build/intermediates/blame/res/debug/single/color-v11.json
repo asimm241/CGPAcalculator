@@ -1,18 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "merged": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
         "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
-        "merged": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     }
 ]

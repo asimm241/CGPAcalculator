@@ -1,18 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher_round.png",
+        "source": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher_round.png",
-        "source": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
-    },
-    {
-        "merged": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher_round.png",
-        "source": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     }
 ]

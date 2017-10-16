@@ -1,34 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
-        "merged": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
-        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\layout-v21\\notification_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\layout-v21\\notification_template_icon_group.xml"
-    },
-    {
-        "merged": "C:\\Users\\Shahzeb\\CGPA_Calculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "merged": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
         "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
-        "merged": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "merged": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
         "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
-        "merged": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
-        "merged": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\layout-v21\\notification_action_tombstone.xml"
-    },
-    {
-        "merged": "C:\\Users\\Shahzeb\\Documents\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "merged": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
         "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shahzeb\\CGPAcalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\asimm\\.android\\build-cache\\32731ea748f3194d170d4928745d014ffe3fc618\\output\\res\\layout-v21\\notification_template_custom_big.xml"
     }
 ]

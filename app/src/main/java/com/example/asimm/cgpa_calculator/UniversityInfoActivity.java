@@ -37,7 +37,7 @@ public class UniversityInfoActivity extends BaseActivity implements View.OnClick
                 Utilities.saveUniversity(uni);
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
-
+                finish();
 
             }
         }

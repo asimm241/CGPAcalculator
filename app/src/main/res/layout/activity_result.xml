@@ -12,24 +12,34 @@
 
         <include
             layout="@layout/result_row"
+            android:id="@+id/previousCGPA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <include
             layout="@layout/result_row"
+            android:id="@+id/currentCGPA"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
 
         <include
             layout="@layout/result_row"
+            android:id="@+id/currentSGPA"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="All information has been updated"/>
+
 
         </LinearLayout>
+
 
 
 </LinearLayout>

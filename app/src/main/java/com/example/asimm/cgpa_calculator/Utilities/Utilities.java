@@ -19,18 +19,21 @@ public class Utilities {
         mSharedPref = context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE);
     }
 
-    public static void  saveCGPA(float cgpa){
+    public static void  saveCGPA(double cgpa){
         SharedPreferences.Editor editor = mSharedPref.edit();
-        editor.putFloat(PREF_CGPA, cgpa);
+        editor.putFloat(PREF_CGPA, (float) cgpa);
+        editor.apply();
     }
 
-    public static void getCGPA(){
-        mSharedPref.getFloat(PREF_CGPA, 0);
+    public static double getCGPA(){
+
+        return mSharedPref.getFloat(PREF_CGPA, 0);
     }
 
     public static void saveUniversity(String u){
         SharedPreferences.Editor editor = mSharedPref.edit();
         editor.putString(PREF_UNI, u);
+        editor.apply();
     }
 
     public static boolean getIsLogin() {
@@ -40,5 +43,6 @@ public class Utilities {
     public static void setIsLogin(boolean isLogin) {
         SharedPreferences.Editor editor = mSharedPref.edit();
         editor.putBoolean(IS_LOGIN, isLogin);
+        editor.apply();
     }
 }

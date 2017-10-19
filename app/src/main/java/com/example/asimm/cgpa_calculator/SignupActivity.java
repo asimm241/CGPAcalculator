@@ -35,14 +35,17 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
         switch (view.getId()){
             case R.id.sign_next:{
                 String cgpaText = mCGPA.getText().toString();
-                Float cgpa = Float.parseFloat(cgpaText);
+                double cgpa = Float.parseFloat(cgpaText);
                 Utilities.saveCGPA(cgpa);
+                Utilities.setIsLogin(true);
                 Intent intent = new Intent(this, UniversityInfoActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         }
     }
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.example.asimm.cgpa_calculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     Spinner mUniversity, mGrade1, mGrade2, mGrade3, mGrade4, mGrade5, mGrade6, mGrade7, mCredit1, mCredit2, mCredit3, mCredit4, mCredit5, mCredit6, mCredit7;
     Button mCalculateButton;
     ArrayAdapter<String> gradeAdapter;
+
+
+    String current_University = "FAST";
 
 
     @Override
@@ -87,6 +91,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_calculate:
+                current_University = mUniversity.getSelectedItem().toString();
+
                 String g1 = mGrade1.getSelectedItem().toString();
                 int c1 = Integer.parseInt(mCredit1.getSelectedItem().toString());
                 Course course1 = new Course(g1, c1);
@@ -138,9 +144,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             totalCreditHours = courses.get(i).getCredit() + totalCreditHours;
         }
 
-        gpa = getFAST_SGPA(courses, totalCreditHours);
 
-        gpa = round(gpa, 2);
+        if (current_University.equals("FAST-NU"))
+            gpa = getFAST_SGPA(courses, totalCreditHours);
+        else
+            gpa = getNUST_SGPA(courses, totalCreditHours);
+
+            gpa = round(gpa, 2);
+        Intent intent = new Intent(this, ResultActivity.class);
+        intent.putExtra("GPA", gpa);
+        startActivity(intent);
         Toast.makeText(this, "Gpa is : " + Double.toString(gpa), Toast.LENGTH_LONG).show();
 
         return gpa;

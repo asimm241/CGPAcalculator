@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
      android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="20dp">
+    android:layout_height="match_parent">
     <EditText
+        android:id="@+id/courseName"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:hint="Enter course name :"
+        android:background="@drawable/textbox"
+        android:paddingLeft="5dp"
+        android:hint="Course :"
         android:layout_margin="5dp"/>
     <Spinner
         android:id="@+id/grade"
+        android:layout_toRightOf="@+id/courseName"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:entries="@array/fast_grades"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/grade_drop_down"
+        android:layout_alignBottom="@id/courseName"
+        android:layout_alignTop="@+id/courseName"
         android:layout_marginLeft="5dp"/>
     <Spinner
         android:id="@+id/credit_hour"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_toRightOf="@id/grade"
+        android:layout_alignBottom="@id/grade"
+        android:layout_alignTop="@+id/grade"
+        android:gravity="center"
+        android:background="@drawable/grade_drop_down"
         android:entries="@array/credit_hours"
         android:layout_marginLeft="5dp"/>
 
-</LinearLayout>
+</RelativeLayout>

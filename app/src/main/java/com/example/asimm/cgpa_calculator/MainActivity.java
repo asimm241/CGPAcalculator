@@ -1,6 +1,7 @@
 package com.example.asimm.cgpa_calculator;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void setUpViews() {
+
+        setTitle("GPA Calculator");
 
         String data[] = getResources().getStringArray(R.array.fast_grades);
         List<String> list = new ArrayList<String>(Arrays.asList(data));
@@ -130,11 +133,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 courses.add(course6);
                 courses.add(course7);
 
-                calculateSGPA(courses);
+                double gpa = calculateSGPA(courses);
+                displayDialog(gpa);
                 break;
             default:
                 break;
         }
+    }
+
+    private void displayDialog(double gpa) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Your GPA:" + gpa)
+        .setTitle("GPA Result")
+        .create().show();
     }
 
     private double calculateSGPA(ArrayList<Course> courses) {
@@ -151,11 +163,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             gpa = getNUST_SGPA(courses, totalCreditHours);
 
             gpa = round(gpa, 2);
-        Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("GPA", gpa);
-        startActivity(intent);
-        Toast.makeText(this, "Gpa is : " + Double.toString(gpa), Toast.LENGTH_LONG).show();
-
         return gpa;
     }
 

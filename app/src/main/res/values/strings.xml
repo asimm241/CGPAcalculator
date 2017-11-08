@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CGPA_Calculator</string>
+    <string name="app_name">GPA 4.0</string>
     <string name="calculate">Calculate</string>
     <string-array name= "universities" >
         <item>FAST-NU</item>

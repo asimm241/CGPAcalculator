@@ -6,3 +6,5 @@
 .gradle/3.3/taskArtifacts/fileSnapshots.bin
 .gradle/3.3/taskArtifacts/fileHashes.bin
 .gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin
+build/intermediates/dex-cache/cache.xml
+.idea/

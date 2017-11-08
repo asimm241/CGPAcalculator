@@ -12,6 +12,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +39,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void setUpViews() {
+
+        //addMob
+        AdView adView = (AdView)findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("C8105487EAE9B753546CD53765DFA855")
+                .build();
+
+        adView.loadAd(adRequest);
+
+
 
         setTitle("GPA Calculator");
 

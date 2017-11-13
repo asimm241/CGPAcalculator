@@ -9,4 +9,5 @@
 
     <!--Main Activity-->
     <color name="mainActivityBackground">#dadada</color>
+    <color name="toolbarColor">#5A9AA8</color>
 </resources>

@@ -1,22 +1,17 @@
 package com.example.asimm.cgpa_calculator;
 
-import android.content.Intent;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,6 +22,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     Button mCalculateButton;
     ArrayAdapter<String> gradeAdapter;
 
+    ArrayList<Course> courses;
 
     String current_University = "FAST";
 
@@ -40,17 +36,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     private void setUpViews() {
 
+
+        MobileAds.initialize(this, "ca-app-pub-1608278591411157~3919386414");
         //addMob
         AdView adView = (AdView)findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("C8105487EAE9B753546CD53765DFA855")
+//                .addTestDevice("C8105487EAE9B753546CD53765DFA855")
                 .build();
 
         adView.loadAd(adRequest);
 
-
-
-        setTitle("GPA Calculator");
 
         String data[] = getResources().getStringArray(R.array.fast_grades);
         List<String> list = new ArrayList<String>(Arrays.asList(data));
@@ -104,48 +99,32 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     }
 
+    private void addCourse(Spinner grade, Spinner credit){
+
+        String g1 = grade.getSelectedItem().toString();
+        if(g1.equals("-") || credit.getSelectedItem().toString().equals("-"))
+            return;
+        int c1 = Integer.parseInt(credit.getSelectedItem().toString());
+        Course course1 = new Course(g1, c1);
+
+        courses.add(course1);
+
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_calculate:
                 current_University = mUniversity.getSelectedItem().toString();
+                courses = new ArrayList<>();
 
-                String g1 = mGrade1.getSelectedItem().toString();
-                int c1 = Integer.parseInt(mCredit1.getSelectedItem().toString());
-                Course course1 = new Course(g1, c1);
-
-                String g2 = mGrade2.getSelectedItem().toString();
-                int c2 = Integer.parseInt(mCredit2.getSelectedItem().toString());
-                Course course2 = new Course(g2, c2);
-
-                String g3 = mGrade3.getSelectedItem().toString();
-                int c3 = Integer.parseInt(mCredit3.getSelectedItem().toString());
-                Course course3 = new Course(g3, c3);
-
-                String g4 = mGrade4.getSelectedItem().toString();
-                int c4 = Integer.parseInt(mCredit4.getSelectedItem().toString());
-                Course course4 = new Course(g4, c4);
-
-                String g5 = mGrade5.getSelectedItem().toString();
-                int c5 = Integer.parseInt(mCredit5.getSelectedItem().toString());
-                Course course5 = new Course(g5, c5);
-
-                String g6 = mGrade6.getSelectedItem().toString();
-                int c6 = Integer.parseInt(mCredit6.getSelectedItem().toString());
-                Course course6 = new Course(g6, c6);
-
-                String g7 = mGrade7.getSelectedItem().toString();
-                int c7 = Integer.parseInt(mCredit7.getSelectedItem().toString());
-                Course course7 = new Course(g7, c7);
-
-                ArrayList<Course> courses = new ArrayList<>();
-                courses.add(course1);
-                courses.add(course2);
-                courses.add(course3);
-                courses.add(course4);
-                courses.add(course5);
-                courses.add(course6);
-                courses.add(course7);
+                addCourse(mGrade1, mCredit1);
+                addCourse(mGrade2, mCredit2);
+                addCourse(mGrade3, mCredit3);
+                addCourse(mGrade4, mCredit4);
+                addCourse(mGrade5, mCredit5);
+                addCourse(mGrade6, mCredit6);
+                addCourse(mGrade7, mCredit7);
 
                 double gpa = calculateSGPA(courses);
                 displayDialog(gpa);

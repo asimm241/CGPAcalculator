@@ -4,6 +4,7 @@
     <string-array name= "universities" >
         <item>FAST-NU</item>
         <item>NUST</item>
+        <item>PUCIT</item>
     </string-array>
 
     <string-array name="fast_grades">
@@ -28,6 +29,22 @@
         <item>B</item>
         <item>C+</item>
         <item>C</item>
+        <item>D</item>
+        <item>F</item>
+        <item>-</item>
+    </string-array>
+
+    <string-array name="pucit_grades">
+        <item>A+</item>
+        <item>A</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B</item>
+        <item>B-</item>
+        <item>C+</item>
+        <item>C</item>
+        <item>C-</item>
+        <item>D+</item>
         <item>D</item>
         <item>F</item>
         <item>-</item>

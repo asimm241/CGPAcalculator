@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         MobileAds.initialize(this, "ca-app-pub-1608278591411157~3919386414");
         //addMob
-        AdView adView = (AdView)findViewById(R.id.adView);
+        AdView adView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
 //                .addTestDevice("C8105487EAE9B753546CD53765DFA855")
                 .build();
@@ -99,10 +99,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     }
 
-    private void addCourse(Spinner grade, Spinner credit){
+    private void addCourse(Spinner grade, Spinner credit) {
 
         String g1 = grade.getSelectedItem().toString();
-        if(g1.equals("-") || credit.getSelectedItem().toString().equals("-"))
+        if (g1.equals("-") || credit.getSelectedItem().toString().equals("-"))
             return;
         int c1 = Integer.parseInt(credit.getSelectedItem().toString());
         Course course1 = new Course(g1, c1);
@@ -138,8 +138,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setMessage("Your GPA:" + gpa)
-        .setTitle("GPA Result")
-        .create().show();
+                .setTitle("GPA Result")
+                .create().show();
     }
 
     private double calculateSGPA(ArrayList<Course> courses) {
@@ -150,12 +150,24 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         }
 
 
-        if (current_University.equals("FAST-NU"))
-            gpa = getFAST_SGPA(courses, totalCreditHours);
-        else
-            gpa = getNUST_SGPA(courses, totalCreditHours);
+        switch (current_University) {
+            case "FAST-NU":
+                gpa = getFAST_SGPA(courses, totalCreditHours);
+                gpa = round(gpa, 2);
+                break;
+            case "PUCIT":
+                gpa = getPUCIT_SGPA(courses, totalCreditHours);
+                gpa = extractDecimal(gpa, 2);
+                break;
+            case "NUST":
+                gpa = getNUST_SGPA(courses, totalCreditHours);
+                gpa = round(gpa, 2);
+                break;
+            default:
+                break;
+        }
 
-            gpa = round(gpa, 2);
+
         return gpa;
     }
 
@@ -183,6 +195,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         return gpa;
     }
 
+    private double getPUCIT_SGPA(ArrayList<Course> courses, double totalCreditHours) {
+        double gpa = 0;
+        for (int i = 0; i < courses.size(); i++) {
+            double P = getPUCITPoint(courses.get(i).getGrade());
+            double C = courses.get(i).getCredit();
+            gpa = P * (C / totalCreditHours) + gpa;
+        }
+
+        return gpa;
+    }
+
     private double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
 
@@ -192,12 +215,66 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         return (double) tmp / factor;
     }
 
+    private double extractDecimal(double value, int places) {
+
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        double tmp = Math.floor(value);
+        return (double) tmp / factor;
+    }
+
+
  /*   public void farmulafast(){
         P1 (C1/C) +P2 (C2/C)+P3(C3/C)+P4(C4/C);
     }*/
 
 
     private double getFASTPoint(String grade) {
+        double points = 0;
+        switch (grade) {
+            case "A+":
+                points = 4.0;
+                break;
+            case "A":
+                points = 4.0;
+                break;
+            case "A-":
+                points = 3.67;
+                break;
+            case "B+":
+                points = 3.33;
+                break;
+            case "B":
+                points = 3.00;
+                break;
+            case "B-":
+                points = 2.67;
+                break;
+            case "C+":
+                points = 2.33;
+                break;
+            case "C":
+                points = 2.00;
+                break;
+            case "C-":
+                points = 1.67;
+                break;
+            case "D+":
+                points = 1.33;
+                break;
+            case "D":
+                points = 1.00;
+                break;
+            case "F":
+                points = 0.00;
+                break;
+            default:
+                break;
+        }
+        return points;
+    }
+
+    private double getPUCITPoint(String grade) {
         double points = 0;
         switch (grade) {
             case "A+":
@@ -299,6 +376,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     gradeAdapter.addAll(list1);
                     gradeAdapter.clear();
                     gradeAdapter.addAll(Arrays.asList(data1));
+                    gradeAdapter.notifyDataSetChanged();
+                    break;
+
+                case 2:
+                    String data2[] = getResources().getStringArray(R.array.pucit_grades);
+                    List<String> list2 = new ArrayList<String>(Arrays.asList(data2));
+                    gradeAdapter.clear();
+                    gradeAdapter.addAll(list2);
+                    gradeAdapter.clear();
+                    gradeAdapter.addAll(Arrays.asList(data2));
                     gradeAdapter.notifyDataSetChanged();
                     break;
             }
